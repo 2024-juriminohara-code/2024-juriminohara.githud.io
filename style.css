@@ -1,0 +1,234 @@
+/* --- 基本設定・リセット --- */
+:root {
+    --main-pink: #ff85a2;
+    --sub-lavender: #e2d1f9;
+    --sub-mint: #d1f2eb;
+    --accent-silver: #e0e0e0;
+    --text-color: #4a4a4a;
+    --bg-white: #ffffff;
+    --font-rounded: "Hiragino Maru Gothic ProN", "Yu Gothic", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-rounded);
+    color: var(--text-color);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+}
+
+/* --- ヘッダー --- */
+.site-header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--sub-lavender);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--main-pink);
+    letter-spacing: 2px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-diagnosis-small {
+    background: linear-gradient(45deg, var(--main-pink), #ffafbd);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(255, 133, 162, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.btn-diagnosis-small:hover {
+    transform: scale(1.05);
+}
+
+/* --- ヒーローセクション --- */
+.hero {
+    height: 80vh;
+    background: linear-gradient(135deg, #fff5f7 0%, var(--sub-lavender) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero-copy {
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero-copy span {
+    color: var(--main-pink);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-copy span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 133, 162, 0.2);
+    z-index: -1;
+}
+
+.btn-diagnosis-large {
+    display: inline-block;
+    padding: 20px 50px;
+    background: linear-gradient(45deg, var(--main-pink), #ff6b81);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(255, 133, 162, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-diagnosis-large:hover {
+    box-shadow: 0 5px 10px rgba(255, 133, 162, 0.2);
+    transform: translateY(3px);
+}
+
+/* --- 肌質別クイックアクセス --- */
+.skin-type-nav {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.type-grid {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.type-item {
+    padding: 15px 30px;
+    border: 2px solid var(--sub-mint);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.type-item:hover {
+    background-color: var(--sub-mint);
+    transform: rotate(-2deg);
+}
+
+/* --- 診断セクション --- */
+.diagnosis-info {
+    padding: 80px 5%;
+    background-color: #fafafa;
+}
+
+.info-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--accent-silver);
+    text-align: center;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-color);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+/* --- トレンドカード --- */
+.how-to-section {
+    padding: 60px 5%;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--main-pink);
+    margin-bottom: 40px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.how-to-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.how-to-card:hover {
+    transform: translateY(-10px);
+}
+
+.how-to-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: var(--sub-lavender); /* 画像がない時の仮色 */
+}
+
+.how-to-card h4 {
+    padding: 15px;
+    margin: 0;
+    font-size: 16px;
+}
+
+/* --- フッター --- */
+.site-footer {
+    padding: 40px 5%;
+    background: #fdfdfd;
+    border-top: 1px solid var(--accent-silver);
+    text-align: center;
+    font-size: 12px;
+}
